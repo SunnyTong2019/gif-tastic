@@ -1,4 +1,4 @@
-$(document).ready(function () {
+
 
 
     var reactions = ["laughing", "mad", "excited", "sad", "omg", "shocked"];
@@ -30,9 +30,17 @@ $(document).ready(function () {
 
 
     renderButtons();
+    
+    /*
+     If I use below line:
+     $(".reaction-button").on("click", function () {
 
-    $(".reaction-button").on("click", function () {
+     button click function won't work for newly added button.
 
+     So I changed to use below line instead: 
+     $(document).on("click", ".reaction-button", function(){
+    */
+        $(document).on("click", ".reaction-button", function(){
         var reaction = $(this).attr("data-reaction");
         var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&q=" + reaction + "&limit=10";
 
@@ -40,8 +48,9 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
             var results = response.data;
+            
+            $("#gifs-view").empty();
 
             for (var i = 0; i < results.length; i++) {
                 var stillURL = results[i].images.fixed_height_still.url;
@@ -65,4 +74,4 @@ $(document).ready(function () {
         
         
         
-        });
+       
