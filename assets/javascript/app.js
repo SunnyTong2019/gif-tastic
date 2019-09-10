@@ -70,13 +70,14 @@ $(document).ready(function () {
                 newImg.addClass("gif");
 
                 var ratingEle = $("<h6>");
-                ratingEle.addClass("text-center mt-2");
+                ratingEle.addClass("text-center mt-2 text-info");
                 ratingEle.text("Rating: " + rating);
 
                 newDiv.append(newImg);
                 newDiv.append(ratingEle);
 
                 $("#gifs-view").append(newDiv);
+                $("#gifs-column").addClass("border");
             }
         });
     });
