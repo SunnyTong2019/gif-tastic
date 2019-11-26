@@ -6,6 +6,10 @@
 * Users can enter a new topic which will add a new button.
 
 
+## Deployed Link
+https://sunnytong2019.github.io/gif-tastic/
+
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
